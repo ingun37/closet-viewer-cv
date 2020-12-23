@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="closet-viewer-cv", # Replace with your own username
-    version="0.0.1",
+    name="closet-viewer-cv",
+    version="0.0.5",
     author="Ingun Jon",
     author_email="ingun37@gmail.com",
     description="A small example package",
@@ -19,4 +19,9 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.7',
+    install_requires=["opencv-python"],
+    entry_points='''
+    [console_scripts]
+    closet-viewer-cv=pkg:main
+    '''
 )
