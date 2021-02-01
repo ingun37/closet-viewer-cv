@@ -25,7 +25,7 @@ def main():
     x = cv2.imread(x_path)
     y = cv2.imread(y_path)
     diff = np.absolute(x.astype(np.float) - y.astype(np.float))
-    res, thres_diff = cv2.threshold(diff, 1, 255, cv2.THRESH_BINARY)
+    res, thres_diff = cv2.threshold(diff, 0, 255, cv2.THRESH_BINARY)
     combined = np.concatenate((x, y, diff, thres_diff,), axis=1)
 
     # x_base = splitext(basename(x_path))[0]
